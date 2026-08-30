@@ -5,27 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 学习与交流</title>
 <meta name="description" content="分享 AI 学习内容的网站：课程、答疑、学科方向与资讯。">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=3">
+<!-- head -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI 学习与交流">
+<meta property="og:title" content="AI 学习与交流">
+<meta property="og:description" content="分享 AI 学习内容的网站：课程、答疑、学科方向与资讯。">
+<meta property="og:url" content="https://xiuyuanwang.org/">
+<meta property="og:image" content="https://xiuyuanwang.org/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=acf3af5b">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=acf3af5b">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=acf3af5b">
+<link rel="stylesheet" href="/assets/style.css?v=acf3af5b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=3">
-<script>try{document.documentElement.dataset.lang=localStorage.getItem("site-lang")==="en"?"en":"zh";}catch(e){}</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+<script>try{var s=localStorage.getItem("site-lang");document.documentElement.dataset.lang=s?(s==="en"?"en":"zh"):(/^zh/i.test(navigator.language||"")?"zh":"en");}catch(e){document.documentElement.dataset.lang="zh";}</script>
+<!-- /head -->
 </head>
 <body>
+<!-- header active="home" -->
 <a class="skip-link" href="#main"><span class="zh">跳到主要内容</span><span class="en">Skip to content</span></a>
 <header class="site-header">
   <div class="container header-inner">
-    <a href="index.html" class="brand">
+    <a href="/" class="brand">
       <span class="brand-name"><span class="zh">AI 学习与交流</span><span class="en">AI Learning &amp; Exchange</span></span>
     </a>
     <nav class="site-nav" id="site-nav" aria-label="主导航 Main navigation">
-      <a href="index.html" class="active"><span class="zh">首页</span><span class="en">Home</span></a>
-      <a href="courses.html"><span class="zh">课程分享</span><span class="en">Courses</span></a>
-      <a href="qa.html"><span class="zh">经验答疑</span><span class="en">Q&amp;A</span></a>
-      <a href="fields.html"><span class="zh">学科方向</span><span class="en">Fields</span></a>
-      <a href="news.html"><span class="zh">AI 资讯</span><span class="en">AI News</span></a>
-      <a href="about.html"><span class="zh">关于</span><span class="en">About</span></a>
+      <a href="/" data-nav="home" class="active"><span class="zh">首页</span><span class="en">Home</span></a>
+      <a href="/courses.html" data-nav="courses"><span class="zh">课程分享</span><span class="en">Courses</span></a>
+      <a href="/qa.html" data-nav="qa"><span class="zh">经验答疑</span><span class="en">Q&amp;A</span></a>
+      <a href="/fields.html" data-nav="fields"><span class="zh">学科方向</span><span class="en">Fields</span></a>
+      <a href="/news.html" data-nav="news"><span class="zh">AI 资讯</span><span class="en">AI News</span></a>
+      <a href="/about.html" data-nav="about"><span class="zh">关于</span><span class="en">About</span></a>
     </nav>
     <div class="header-actions">
       <button id="lang-toggle" class="lang-toggle" type="button" aria-label="切换语言 / Switch language"><span class="zh">EN</span><span class="en">中文</span></button>
@@ -33,6 +45,7 @@
     </div>
   </div>
 </header>
+<!-- /header -->
 
 <main id="main">
   <section class="hero">
@@ -44,8 +57,8 @@
           <span class="en">This site is for sharing AI learning content: courses, Q&amp;A, subject directions, and news. It's new — content will be added over time.</span>
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="courses.html"><span class="zh">浏览课程</span><span class="en">Browse courses</span></a>
-          <a class="btn btn-ghost" href="about.html"><span class="zh">了解本站</span><span class="en">About this site</span></a>
+          <a class="btn btn-primary" href="/courses.html"><span class="zh">浏览课程</span><span class="en">Browse courses</span></a>
+          <a class="btn btn-ghost" href="/about.html"><span class="zh">了解本站</span><span class="en">About this site</span></a>
         </div>
       </div>
     </div>
@@ -57,25 +70,25 @@
         <h2 class="section-title"><span class="zh">板块</span><span class="en">Sections</span></h2>
       </div>
       <div class="dept-grid">
-        <a class="dept-card" href="courses.html">
+        <a class="dept-card" href="/courses.html">
           <span class="glyph" aria-hidden="true">课</span>
           <h3><span class="zh">课程分享</span><span class="en">Courses</span></h3>
           <p><span class="zh">AI 课程与讲义，从入门到进阶，全部免费。</span><span class="en">AI courses and notes, from beginner to advanced. All free.</span></p>
           <span class="card-link"><span class="zh">查看 →</span><span class="en">View →</span></span>
         </a>
-        <a class="dept-card" href="qa.html">
+        <a class="dept-card" href="/qa.html">
           <span class="glyph" aria-hidden="true">答</span>
           <h3><span class="zh">经验答疑</span><span class="en">Q&amp;A</span></h3>
           <p><span class="zh">学习中常见问题的解答。</span><span class="en">Answers to common questions.</span></p>
           <span class="card-link"><span class="zh">查看 →</span><span class="en">View →</span></span>
         </a>
-        <a class="dept-card" href="fields.html">
+        <a class="dept-card" href="/fields.html">
           <span class="glyph" aria-hidden="true">探</span>
           <h3><span class="zh">学科方向</span><span class="en">Fields</span></h3>
           <p><span class="zh">按学科了解 AI 的应用和学习路径。</span><span class="en">AI applications and learning paths, by subject.</span></p>
           <span class="card-link"><span class="zh">查看 →</span><span class="en">View →</span></span>
         </a>
-        <a class="dept-card" href="news.html">
+        <a class="dept-card" href="/news.html">
           <span class="glyph" aria-hidden="true">讯</span>
           <h3><span class="zh">AI 资讯</span><span class="en">AI News</span></h3>
           <p><span class="zh">AI 相关的新闻和动态。</span><span class="en">AI news and updates.</span></p>
@@ -84,9 +97,9 @@
       </div>
     </div>
   </section>
-
 </main>
 
+<!-- footer -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -97,16 +110,17 @@
         <p class="footer-tagline"><span class="zh">课程 · 答疑 · 学科方向 · 资讯</span><span class="en">Courses · Q&amp;A · Fields · News</span></p>
       </div>
       <nav class="footer-nav" aria-label="页脚导航 Footer navigation">
-        <a href="index.html"><span class="zh">首页</span><span class="en">Home</span></a>
-        <a href="courses.html"><span class="zh">课程分享</span><span class="en">Courses</span></a>
-        <a href="qa.html"><span class="zh">经验答疑</span><span class="en">Q&amp;A</span></a>
-        <a href="fields.html"><span class="zh">学科方向</span><span class="en">Fields</span></a>
-        <a href="news.html"><span class="zh">AI 资讯</span><span class="en">AI News</span></a>
-        <a href="about.html"><span class="zh">关于</span><span class="en">About</span></a>
+        <a href="/"><span class="zh">首页</span><span class="en">Home</span></a>
+        <a href="/courses.html"><span class="zh">课程分享</span><span class="en">Courses</span></a>
+        <a href="/qa.html"><span class="zh">经验答疑</span><span class="en">Q&amp;A</span></a>
+        <a href="/fields.html"><span class="zh">学科方向</span><span class="en">Fields</span></a>
+        <a href="/news.html"><span class="zh">AI 资讯</span><span class="en">AI News</span></a>
+        <a href="/about.html"><span class="zh">关于</span><span class="en">About</span></a>
       </nav>
     </div>
   </div>
 </footer>
-<script src="assets/main.js?v=3"></script>
+<script src="/assets/main.js?v=acf3af5b"></script>
+<!-- /footer -->
 </body>
 </html>

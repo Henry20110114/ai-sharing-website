@@ -1,54 +1,123 @@
 # AI 学习与交流 — 网站源码
 
-一个纯静态网站（HTML + CSS + 少量 JS），无需构建工具，任何静态托管服务都能直接部署。
+纯静态网站（HTML + CSS + 少量 JS），托管在 GitHub Pages，域名 xiuyuanwang.org。
+只需要电脑上有 Python 3（Mac 自带），没有其他依赖。
 
 ## 文件结构
 
 ```
-index.html      首页
-courses.html    课程分享（占位）
-qa.html         经验答疑（占位）
-fields.html     学科方向
-news.html       AI 资讯（占位）
-about.html      关于
+index.html              首页
+courses.html            课程分享（占位，内含发布用的示例代码）
+qa.html                 经验答疑（占位，内含发布用的示例代码）
+fields.html             学科方向
+news.html               AI 资讯（占位，内含发布用的示例代码）
+about.html              关于
+404.html                找不到页面时显示
+build.py                构建脚本（见下）
+partials/
+  head.html             所有页面共用的 <head> 内容：图标、样式、字体、分享预览标签
+  header.html           所有页面共用的页头和导航
+  footer.html           所有页面共用的页脚
+templates/
+  article.html          文章页模板：课程讲义、资讯长文都用它
 assets/
-  style.css     全站样式（配色、排版集中在文件顶部的 :root 变量里）
-  main.js       语言切换、移动端菜单
-  favicon.svg   站点图标
+  style.css             全站样式（配色集中在文件顶部的 :root 变量里）
+  main.js               语言切换、移动端菜单
+  article.js            文章页专用：自动目录、标题锚点、代码复制按钮
+  favicon.svg / favicon-32.png / apple-touch-icon.png   站点图标（Safari 和 iOS 用 PNG）
+  og-image.png          链接分享到聊天软件时显示的预览图
+  src/                  上面几张图的 SVG 源文件
+  images/               文章里用到的图片放这里（需要时自己新建）
+.nojekyll               告诉 GitHub Pages 直接发布文件，不做任何处理
+CNAME                   自定义域名，不要删
 ```
 
-课程、答疑、资讯三个板块目前是占位状态：页面结构和导航都已就绪，等实际内容整理好后，替换页面里的占位提示（`note-panel` 那一块）即可。网站没有放任何联系方式。
+网站没有放任何联系方式。
+
+## 构建脚本 build.py
+
+页头、页脚和 `<head>` 里的公共部分只在 `partials/` 里写一份。每个页面用注释标出这三块的位置：
+
+```html
+<!-- head -->      ...      <!-- /head -->
+<!-- header active="courses" -->   ...   <!-- /header -->
+<!-- footer -->    ...      <!-- /footer -->
+```
+
+运行 `python3 build.py` 会把 partials 的内容填进每个页面的标记之间，并把所有 `?v=` 版本号统一改成
+根据 CSS / JS 内容算出来的哈希值（改了样式访客就会自动重新下载，不用手动改数字）。
+`active="..."` 决定导航里哪一项高亮。
+
+**不用记着手动运行**：仓库里装了一个 git pre-commit 钩子（`.git/hooks/pre-commit`），每次 `git commit`
+之前会自动运行构建并把改动加进这次提交。如果换了电脑重新 clone，钩子不会跟着走，需要再复制一次：
+
+```sh
+printf '#!/bin/sh\ncd "$(git rev-parse --show-toplevel)" || exit 1\npython3 build.py --stage\n' > .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+```
+
+**改导航 / 页脚 / 图标**：只改 `partials/` 里对应的文件，然后运行 `python3 build.py`（或者直接提交）。
+
+## 发布内容
+
+### 发一篇文章（课程讲义、资讯长文）
+
+```sh
+python3 build.py new courses llm-intro-1 大语言模型入门
+```
+
+`courses` 是板块（可选 `courses` / `qa` / `fields` / `news`），`llm-intro-1` 是文件名，后面是标题（可省略）。
+脚本会生成 `courses/llm-intro-1.html`，填好板块、日期、标题和返回链接，并打印一段可以直接贴到板块页的入口代码。
+
+然后打开生成的文件：
+- `<meta name="description">` 写一句简介（分享链接时会显示）
+- `post-body zh` 里写中文正文，`post-body en` 里写英文正文
+- **没有英文版时**：把 `class="post-body zh"` 改成 `class="post-body"`，删掉整个英文块，中文会在两种语言下都显示
+- `post-nav` 是「上一讲 / 下一讲」，改成对应链接；没有的一侧删掉；单篇文章整段删掉
+
+目录（≥ 2 个二级标题时）、标题旁的 # 锚点链接、代码块右上角的复制按钮都由 `article.js` 自动生成，不用手写。
+文章页打印或另存为 PDF 时会自动隐藏导航等元素。
+
+模板里的链接都是以 `/` 开头的绝对路径，所以文章放在任何子文件夹里都能正常工作。
+
+### 在板块页加入口
+
+`courses.html`、`qa.html`、`news.html` 里的占位面板下面，各有一段被 `<!-- -->` 注释包住的示例代码：
+
+- 课程：`entry-grid` + `entry-card`，每门课一张卡片
+- 资讯：`news-list` + `news-entry`，按日期倒序，短消息可以不带链接直接写
+- 问答：`qa-list` + `qa-item`，点击问题展开回答，不需要单独页面
+
+第一次发布时：删掉占位面板，把示例代码从注释里拿出来改成真实内容。之后每次发布只需再加一个条目
+（`build.py new` 打印的那段就是）。
 
 ## 双语机制
 
-- 默认中文；右上角按钮切换英文，选择保存在浏览器 localStorage（键名 `site-lang`）。
-- 页面里所有文字都成对出现：`<span class="zh">中文</span><span class="en">English</span>`。
-  修改内容时两个都改；只写一种语言也可以，另一种语言下会不显示。
+- 首次访问按浏览器语言决定中英文（中文浏览器显示中文，其他显示英文）；右上角按钮切换后会记住选择。
+- 短文字成对写：`<span class="zh">中文</span><span class="en">English</span>`。
+- 长内容按块写：`<div class="... zh">` 和 `<div class="... en">`。
+- 没有 `zh`/`en` 类的元素在两种语言下都显示。
 
-## 修改内容
+## 字体
 
-- **改文字**：直接编辑对应页面的 HTML。
-- **改配色 / 字体**：编辑 `assets/style.css` 顶部的 `:root` 变量。
-- **改站名**：搜索替换「AI 学习与交流」和 "AI Learning & Exchange"（出现在每页的页头、页脚和 `<title>` 里）。站标就是纯文字，没有图形 logo；favicon 是 `assets/favicon.svg` 里的 "AI" 两个字母。
-- **改样式后浏览器没生效**：把各页面里 `style.css?v=3` 的数字加一（favicon 和 main.js 同理），浏览器就会重新下载。
+页面用「不阻塞渲染」的方式加载 Google Fonts 的思源宋体 / 思源黑体（`partials/head.html` 里 `media="print"` 那一行）。
+能访问 Google 的访客会看到 Noto 字体；访问不了的（大陆）页面照常立刻显示，用系统里最接近的字体，不会白屏等待。
 
-## 部署到 XiuyuanWang.org（GitHub Pages 方案）
+## 修改样式
 
-1. 在此文件夹运行：
-   ```
-   git init && git add -A && git commit -m "Initial site"
-   ```
-   然后推送到 GitHub 上的一个新仓库。
-2. 仓库 Settings → Pages → Source 选 `main` 分支根目录，保存后会得到 `<用户名>.github.io/<仓库名>` 地址。
-3. 在 Pages 设置里填入自定义域名 `xiuyuanwang.org`（会自动在仓库里生成 CNAME 文件）。
-4. 在 GoDaddy 的 DNS 管理里添加：
-   - 4 条 A 记录，主机名 `@`，分别指向：
-     `185.199.108.153`、`185.199.109.153`、`185.199.110.153`、`185.199.111.153`
-   - 1 条 CNAME 记录，主机名 `www`，指向 `<用户名>.github.io`
-5. DNS 生效后（最长 24–48 小时，通常快得多），回到 GitHub Pages 设置勾选 **Enforce HTTPS**。
+- **改配色**：编辑 `assets/style.css` 顶部的 `:root` 变量。
+- **改站名**：搜索替换「AI 学习与交流」和 "AI Learning & Exchange"（partials 三个文件、各页面的 `<title>`、模板、`assets/src/og-image.svg`）。
+- **改图标 / 预览图**：改 `assets/src/` 里的 SVG，然后在仓库根目录运行 `swift assets/src/render-icons.swift`，
+  三张 PNG 会按正确尺寸重新生成到 `assets/`（Mac 自带 Swift，第一次运行会慢几秒）。
 
-Netlify / Vercel / Cloudflare Pages 也都可以：直接把整个文件夹拖进去部署，然后按它们的提示在 GoDaddy 配置 DNS 即可。
+## 本地预览与上线
 
-## 本地预览
+- 预览：在此文件夹运行 `python3 -m http.server 8000`，浏览器打开 `http://localhost:8000`。
+  （页面用的是绝对路径，直接双击 HTML 文件打开会缺样式，要用上面的方式。）
+- 上线：`git add -A && git commit -m "说明" && git push`，大约一分钟后 xiuyuanwang.org 就会更新。
+  提交时钩子会自动运行构建。
 
-双击 `index.html` 即可在浏览器打开；或在此文件夹运行 `python3 -m http.server` 后访问 `http://localhost:8000`。
+### 域名（已配置好，仅作记录）
+
+GoDaddy DNS：4 条 A 记录 `@` → `185.199.108.153` / `109.153` / `110.153` / `111.153`，
+1 条 CNAME `www` → `henry20110114.github.io`。仓库里的 `CNAME` 文件写着 `xiuyuanwang.org`。
