@@ -1,0 +1,969 @@
+{
+ "n": 42,
+ "period": [
+  "2026-07-09",
+  "2026-07-13"
+ ],
+ "questions": [
+  {
+   "key": "gender",
+   "zh": "你的性别？",
+   "en": "Gender",
+   "multi": false,
+   "ordered": false,
+   "options": [
+    {
+     "zh": "男",
+     "en": "Male",
+     "count": 28
+    },
+    {
+     "zh": "女",
+     "en": "Female",
+     "count": 13
+    },
+    {
+     "zh": "不方便透露",
+     "en": "Prefer not to say",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "key": "grade",
+   "zh": "你的年级？",
+   "en": "Grade",
+   "multi": false,
+   "ordered": true,
+   "options": [
+    {
+     "zh": "初中（7–9 年级）",
+     "en": "Grades 7–9",
+     "count": 4
+    },
+    {
+     "zh": "高一（10 年级）",
+     "en": "Grade 10",
+     "count": 22
+    },
+    {
+     "zh": "高二（11 年级）",
+     "en": "Grade 11",
+     "count": 9
+    },
+    {
+     "zh": "高三（12 年级）",
+     "en": "Grade 12",
+     "count": 5
+    },
+    {
+     "zh": "未注明",
+     "en": "Not specified",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "key": "curriculum",
+   "zh": "你的课程体系是？",
+   "en": "Curriculum",
+   "multi": true,
+   "ordered": false,
+   "options": [
+    {
+     "zh": "体制内课程",
+     "en": "Chinese national curriculum",
+     "count": 18
+    },
+    {
+     "zh": "A-Level",
+     "en": "A-Level",
+     "count": 10
+    },
+    {
+     "zh": "不确定",
+     "en": "Not sure",
+     "count": 9
+    },
+    {
+     "zh": "AP",
+     "en": "AP",
+     "count": 4
+    },
+    {
+     "zh": "IB",
+     "en": "IB",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "key": "frequency",
+   "zh": "过去一个月，你使用 AI 辅助学习的频率是？",
+   "en": "How often did you use AI to help you learn in the past month?",
+   "multi": false,
+   "ordered": true,
+   "options": [
+    {
+     "zh": "每天",
+     "en": "Every day",
+     "count": 15
+    },
+    {
+     "zh": "每周几次",
+     "en": "A few times a week",
+     "count": 24
+    },
+    {
+     "zh": "很少",
+     "en": "Rarely",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "key": "ai_types",
+   "zh": "你平时使用哪些类型的 AI？",
+   "en": "What types of AI do you usually use?",
+   "multi": true,
+   "ordered": false,
+   "options": [
+    {
+     "zh": "通用问答类 AI",
+     "en": "General chat assistants",
+     "count": 37
+    },
+    {
+     "zh": "翻译或语言学习类 AI",
+     "en": "Translation / language learning",
+     "count": 19
+    },
+    {
+     "zh": "搜索或资料整理类 AI",
+     "en": "Search / research assistants",
+     "count": 17
+    },
+    {
+     "zh": "写作润色类 AI",
+     "en": "Writing and editing",
+     "count": 16
+    },
+    {
+     "zh": "图片、音乐、视频生成类 AI",
+     "en": "Image, music, video generation",
+     "count": 10
+    },
+    {
+     "zh": "编程类 AI",
+     "en": "Coding assistants",
+     "count": 5
+    }
+   ]
+  },
+  {
+   "key": "services",
+   "zh": "过去一个月，你实际使用过哪些 AI 服务？",
+   "en": "Which AI services did you actually use in the past month?",
+   "multi": true,
+   "ordered": false,
+   "options": [
+    {
+     "zh": "豆包",
+     "en": "Doubao",
+     "count": 33
+    },
+    {
+     "zh": "ChatGPT",
+     "en": "ChatGPT",
+     "count": 27
+    },
+    {
+     "zh": "DeepSeek",
+     "en": "DeepSeek",
+     "count": 21
+    },
+    {
+     "zh": "通义千问 Qwen",
+     "en": "Qwen",
+     "count": 10
+    },
+    {
+     "zh": "Gemini",
+     "en": "Gemini",
+     "count": 4
+    },
+    {
+     "zh": "Claude",
+     "en": "Claude",
+     "count": 3
+    },
+    {
+     "zh": "Kimi",
+     "en": "Kimi",
+     "count": 3
+    },
+    {
+     "zh": "Claude Code",
+     "en": "Claude Code",
+     "count": 2
+    },
+    {
+     "zh": "Cursor",
+     "en": "Cursor",
+     "count": 1
+    },
+    {
+     "zh": "Grok",
+     "en": "Grok",
+     "count": 1
+    },
+    {
+     "zh": "Microsoft Copilot",
+     "en": "Microsoft Copilot",
+     "count": 1
+    },
+    {
+     "zh": "MiniMax 或海螺 AI",
+     "en": "MiniMax / Hailuo",
+     "count": 1
+    },
+    {
+     "zh": "OpenAI Codex",
+     "en": "OpenAI Codex",
+     "count": 1
+    },
+    {
+     "zh": "Suno",
+     "en": "Suno",
+     "count": 1
+    },
+    {
+     "zh": "manus",
+     "en": "Manus",
+     "count": 1
+    },
+    {
+     "zh": "智谱清言 GLM",
+     "en": "GLM (Zhipu)",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "key": "stages",
+   "zh": "过去一个月，你在哪些学习环节使用过 AI 协助？",
+   "en": "In which parts of learning did you use AI in the past month?",
+   "multi": true,
+   "ordered": false,
+   "options": [
+    {
+     "zh": "查找资料",
+     "en": "Finding information",
+     "count": 28
+    },
+    {
+     "zh": "理解概念",
+     "en": "Understanding concepts",
+     "count": 28
+    },
+    {
+     "zh": "解题思路",
+     "en": "Working out how to solve problems",
+     "count": 24
+    },
+    {
+     "zh": "翻译",
+     "en": "Translation",
+     "count": 21
+    },
+    {
+     "zh": "整理资料",
+     "en": "Organizing notes and materials",
+     "count": 20
+    },
+    {
+     "zh": "写作大纲",
+     "en": "Outlining writing",
+     "count": 18
+    },
+    {
+     "zh": "语法检查或润色",
+     "en": "Grammar checking / polishing",
+     "count": 16
+    },
+    {
+     "zh": "复习总结",
+     "en": "Review and summaries",
+     "count": 10
+    },
+    {
+     "zh": "编程或数据处理",
+     "en": "Coding / data processing",
+     "count": 6
+    },
+    {
+     "zh": "小组项目",
+     "en": "Group projects",
+     "count": 5
+    },
+    {
+     "zh": "提出建议",
+     "en": "Getting suggestions",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "key": "delegated",
+   "zh": "哪些学习任务你曾经几乎完全交给 AI 完成？",
+   "en": "Which tasks have you ever handed almost entirely to AI?",
+   "multi": true,
+   "ordered": false,
+   "options": [
+    {
+     "zh": "查资料整理",
+     "en": "Researching and organizing information",
+     "count": 18
+    },
+    {
+     "zh": "从未这样做",
+     "en": "Never done this",
+     "count": 11
+    },
+    {
+     "zh": "制作 PPT 或项目文案",
+     "en": "Making slides or project write-ups",
+     "count": 11
+    },
+    {
+     "zh": "解答完整题目",
+     "en": "Solving entire problems",
+     "count": 11
+    },
+    {
+     "zh": "完成整篇作文或作业",
+     "en": "Writing a whole essay or assignment",
+     "count": 9
+    },
+    {
+     "zh": "写代码",
+     "en": "Writing code",
+     "count": 4
+    },
+    {
+     "zh": "实验报告",
+     "en": "Lab reports",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "key": "crunch",
+   "zh": "如果假期作业很多，明天开学，你今天晚上无法全部完成，你会使用 AI 直接生成答案吗？",
+   "en": "Lots of holiday homework, school starts tomorrow, and you can't finish tonight. Would you have AI generate the answers?",
+   "multi": false,
+   "ordered": true,
+   "options": [
+    {
+     "zh": "会，经常这样做",
+     "en": "Yes, I often do",
+     "count": 9
+    },
+    {
+     "zh": "可能会，但只作为临时应急",
+     "en": "Maybe, but only as a last resort",
+     "count": 18
+    },
+    {
+     "zh": "不太会，最多让 AI 提供思路",
+     "en": "Probably not — at most ask AI for hints",
+     "count": 13
+    },
+    {
+     "zh": "不会，我会尽量自己完成",
+     "en": "No, I'd try to finish it myself",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "key": "group",
+   "zh": "如果学校组织研学或小组项目活动，你会怎么使用 AI？",
+   "en": "For a school field study or group project, how would you use AI?",
+   "multi": true,
+   "ordered": false,
+   "options": [
+    {
+     "zh": "查找和整理资料",
+     "en": "Finding and organizing information",
+     "count": 28
+    },
+    {
+     "zh": "帮助构思项目方向",
+     "en": "Brainstorming the project direction",
+     "count": 24
+    },
+    {
+     "zh": "润色文字",
+     "en": "Polishing text",
+     "count": 21
+    },
+    {
+     "zh": "帮助细化任务框架",
+     "en": "Breaking down the task structure",
+     "count": 18
+    },
+    {
+     "zh": "分析数据",
+     "en": "Analyzing data",
+     "count": 14
+    },
+    {
+     "zh": "制作展示材料",
+     "en": "Making presentation materials",
+     "count": 11
+    },
+    {
+     "zh": "直接完成自己负责的部分",
+     "en": "Doing my whole part for me",
+     "count": 6
+    }
+   ]
+  },
+  {
+   "key": "writing",
+   "zh": "学校布置作文或写作类作业时，你会如何使用 AI？",
+   "en": "For essay or writing assignments, how do you use AI?",
+   "multi": false,
+   "ordered": true,
+   "options": [
+    {
+     "zh": "直接让 AI 生成全文，自己稍作修改",
+     "en": "AI writes the whole thing, I lightly edit",
+     "count": 5
+    },
+    {
+     "zh": "让 AI 提供大纲和素材方向，自己写正文",
+     "en": "AI gives an outline and ideas, I write the text",
+     "count": 24
+    },
+    {
+     "zh": "只让 AI 检查语法或润色表达",
+     "en": "AI only checks grammar or polishes wording",
+     "count": 5
+    },
+    {
+     "zh": "完全不用 AI",
+     "en": "Don't use AI at all",
+     "count": 3
+    },
+    {
+     "zh": "视作业要求而定",
+     "en": "Depends on the assignment rules",
+     "count": 5
+    }
+   ]
+  },
+  {
+   "key": "concept",
+   "zh": "当你突然需要了解一个陌生概念时，你通常会？",
+   "en": "When you suddenly need to understand an unfamiliar concept, you usually…",
+   "multi": false,
+   "ordered": false,
+   "options": [
+    {
+     "zh": "先用搜索引擎查资料，再视情况问 AI",
+     "en": "Search engine first, then AI if needed",
+     "count": 17
+    },
+    {
+     "zh": "直接问 AI",
+     "en": "Ask AI directly",
+     "count": 15
+    },
+    {
+     "zh": "先看课本或课堂资料",
+     "en": "Textbook or class materials first",
+     "count": 8
+    },
+    {
+     "zh": "先问老师或同学",
+     "en": "Ask a teacher or classmate first",
+     "count": 1
+    },
+    {
+     "zh": "暂时不处理",
+     "en": "Leave it for later",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "key": "manual_skills",
+   "zh": "你认为现在还需要掌握以前“手动”搜索和整理资料的技能吗？",
+   "en": "Do you still need the old “manual” skills of searching and organizing information?",
+   "multi": false,
+   "ordered": true,
+   "options": [
+    {
+     "zh": "非常需要",
+     "en": "Still essential",
+     "count": 9
+    },
+    {
+     "zh": "仍然需要，但重要性降低",
+     "en": "Still needed, but less important",
+     "count": 24
+    },
+    {
+     "zh": "只在严肃学习或研究中需要",
+     "en": "Only for serious study or research",
+     "count": 7
+    },
+    {
+     "zh": "基本不需要",
+     "en": "Basically not needed",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "key": "verify",
+   "zh": "你会核查 AI 给出的答案吗？",
+   "en": "Do you check the answers AI gives you?",
+   "multi": false,
+   "ordered": true,
+   "options": [
+    {
+     "zh": "总是会",
+     "en": "Always",
+     "count": 13
+    },
+    {
+     "zh": "经常会",
+     "en": "Often",
+     "count": 12
+    },
+    {
+     "zh": "偶尔会",
+     "en": "Sometimes",
+     "count": 14
+    },
+    {
+     "zh": "很少会",
+     "en": "Rarely",
+     "count": 2
+    },
+    {
+     "zh": "从不会",
+     "en": "Never",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "key": "impact",
+   "zh": "AI 对你的学习方式产生了多大影响？",
+   "en": "How much has AI changed the way you learn?",
+   "multi": false,
+   "ordered": true,
+   "options": [
+    {
+     "zh": "影响很大",
+     "en": "Very large",
+     "count": 11
+    },
+    {
+     "zh": "影响较大",
+     "en": "Fairly large",
+     "count": 22
+    },
+    {
+     "zh": "影响一般",
+     "en": "Moderate",
+     "count": 5
+    },
+    {
+     "zh": "影响较小",
+     "en": "Small",
+     "count": 4
+    }
+   ]
+  },
+  {
+   "key": "impact_aspects",
+   "zh": "AI 对你学习方式的影响主要体现在哪些方面？",
+   "en": "Where has AI changed your learning the most?",
+   "multi": true,
+   "ordered": false,
+   "options": [
+    {
+     "zh": "获取资料更快",
+     "en": "Faster access to information",
+     "count": 34
+    },
+    {
+     "zh": "复习效率提高",
+     "en": "More efficient revision",
+     "count": 27
+    },
+    {
+     "zh": "解题方式变化",
+     "en": "Changed how I solve problems",
+     "count": 19
+    },
+    {
+     "zh": "时间管理变化",
+     "en": "Changed my time management",
+     "count": 11
+    },
+    {
+     "zh": "写作方式变化",
+     "en": "Changed how I write",
+     "count": 9
+    },
+    {
+     "zh": "更依赖 AI",
+     "en": "More dependent on AI",
+     "count": 8
+    },
+    {
+     "zh": "独立思考减少",
+     "en": "Less independent thinking",
+     "count": 7
+    },
+    {
+     "zh": "学习兴趣变化",
+     "en": "Changed my interest in learning",
+     "count": 3
+    },
+    {
+     "zh": "没有明显影响",
+     "en": "No clear effect",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "key": "motivation",
+   "zh": "AI 是否影响了你的学习动力？",
+   "en": "Has AI affected your motivation to learn?",
+   "multi": false,
+   "ordered": true,
+   "options": [
+    {
+     "zh": "明显增强",
+     "en": "Clearly stronger",
+     "count": 4
+    },
+    {
+     "zh": "有些增强",
+     "en": "Somewhat stronger",
+     "count": 23
+    },
+    {
+     "zh": "基本无影响",
+     "en": "No real effect",
+     "count": 13
+    },
+    {
+     "zh": "明显削弱",
+     "en": "Clearly weaker",
+     "count": 1
+    },
+    {
+     "zh": "因任务而异",
+     "en": "Depends on the task",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "key": "without_ai",
+   "zh": "如果一段时间无法使用 AI，你预计学习情况会有哪些变化？",
+   "en": "If you couldn't use AI for a while, what would change?",
+   "multi": true,
+   "ordered": false,
+   "options": [
+    {
+     "zh": "查资料更费时间",
+     "en": "Research would take longer",
+     "count": 23
+    },
+    {
+     "zh": "独立思考变多",
+     "en": "More independent thinking",
+     "count": 14
+    },
+    {
+     "zh": "学习效率下降",
+     "en": "Lower efficiency",
+     "count": 13
+    },
+    {
+     "zh": "影响不大",
+     "en": "Not much change",
+     "count": 10
+    },
+    {
+     "zh": "完成作业变慢",
+     "en": "Slower on homework",
+     "count": 9
+    },
+    {
+     "zh": "更依赖老师或同学",
+     "en": "Rely more on teachers or classmates",
+     "count": 8
+    },
+    {
+     "zh": "可能更认真掌握基础技能",
+     "en": "Might master basic skills more seriously",
+     "count": 4
+    },
+    {
+     "zh": "学习动力下降",
+     "en": "Lower motivation",
+     "count": 4
+    }
+   ]
+  },
+  {
+   "key": "pure_ai",
+   "zh": "你是否看好未来可能出现的纯 AI 教学模式？",
+   "en": "Are you optimistic about a future pure-AI teaching model?",
+   "multi": false,
+   "ordered": true,
+   "options": [
+    {
+     "zh": "很看好，可以替代部分课堂",
+     "en": "Optimistic — could replace some classes",
+     "count": 5
+    },
+    {
+     "zh": "比较看好，但需要教师监督",
+     "en": "Fairly optimistic, with teacher supervision",
+     "count": 18
+    },
+    {
+     "zh": "不太看好，AI 只能辅助教学",
+     "en": "Skeptical — AI can only assist teaching",
+     "count": 19
+    }
+   ]
+  },
+  {
+   "key": "ip",
+   "zh": "你认为 AI 是否会对知识产权和专利构成威胁？",
+   "en": "Does AI threaten intellectual property and patents?",
+   "multi": false,
+   "ordered": true,
+   "options": [
+    {
+     "zh": "会，威胁很大",
+     "en": "Yes, a serious threat",
+     "count": 7
+    },
+    {
+     "zh": "会，但可以通过规则管理",
+     "en": "Yes, but manageable with rules",
+     "count": 20
+    },
+    {
+     "zh": "影响有限",
+     "en": "Limited effect",
+     "count": 9
+    },
+    {
+     "zh": "不会，反而可能促进创新",
+     "en": "No — it may even encourage innovation",
+     "count": 6
+    }
+   ]
+  },
+  {
+   "key": "creativity",
+   "zh": "当一个学生觉得自己想象力或创造力不足时，多使用 AI 会怎样影响他？",
+   "en": "If a student feels short on imagination or creativity, what does heavy AI use do to them?",
+   "multi": false,
+   "ordered": false,
+   "options": [
+    {
+     "zh": "短期有帮助，但可能形成依赖",
+     "en": "Helps short-term, but may create dependence",
+     "count": 18
+    },
+    {
+     "zh": "会提供更多灵感",
+     "en": "Gives more inspiration",
+     "count": 9
+    },
+    {
+     "zh": "会进一步限制原创能力",
+     "en": "Further limits originality",
+     "count": 8
+    },
+    {
+     "zh": "主要取决于使用方式",
+     "en": "Depends mainly on how it's used",
+     "count": 6
+    },
+    {
+     "zh": "不确定",
+     "en": "Not sure",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "key": "detail",
+   "zh": "你通常希望 AI 给出的答案详细程度是？",
+   "en": "How detailed do you want AI answers to be?",
+   "multi": false,
+   "ordered": true,
+   "options": [
+    {
+     "zh": "一两句话结论",
+     "en": "A one- or two-sentence conclusion",
+     "count": 2
+    },
+    {
+     "zh": "简短结论加关键理由",
+     "en": "Short conclusion plus key reasons",
+     "count": 13
+    },
+    {
+     "zh": "先简略回答，需要时再展开",
+     "en": "Brief answer first, expand on request",
+     "count": 15
+    },
+    {
+     "zh": "分步骤详细解释",
+     "en": "Detailed step-by-step explanation",
+     "count": 8
+    },
+    {
+     "zh": "视任务而定",
+     "en": "Depends on the task",
+     "count": 4
+    }
+   ]
+  },
+  {
+   "key": "too_long",
+   "zh": "当 AI 回答比你需要的长很多时，你通常会？",
+   "en": "When an AI answer is much longer than you need, you usually…",
+   "multi": false,
+   "ordered": false,
+   "options": [
+    {
+     "zh": "视重要程度而定",
+     "en": "Depends how important it is",
+     "count": 14
+    },
+    {
+     "zh": "让 AI 重新概括",
+     "en": "Ask AI to summarize",
+     "count": 14
+    },
+    {
+     "zh": "仔细看完",
+     "en": "Read it all carefully",
+     "count": 11
+    },
+    {
+     "zh": "只看开头或结论",
+     "en": "Read only the start or the conclusion",
+     "count": 2
+    },
+    {
+     "zh": "直接跳过",
+     "en": "Skip it",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "key": "rules",
+   "zh": "你是否了解学校或老师对 AI 使用的要求？",
+   "en": "Do you know your school's or teachers' rules on AI use?",
+   "multi": false,
+   "ordered": true,
+   "options": [
+    {
+     "zh": "非常清楚",
+     "en": "Very clear",
+     "count": 11
+    },
+    {
+     "zh": "大致了解",
+     "en": "Roughly aware",
+     "count": 16
+    },
+    {
+     "zh": "听说过但不清楚",
+     "en": "Heard of them, unclear",
+     "count": 5
+    },
+    {
+     "zh": "完全不了解",
+     "en": "Not aware at all",
+     "count": 6
+    },
+    {
+     "zh": "学校目前没有明确要求",
+     "en": "School has no clear rules yet",
+     "count": 4
+    }
+   ]
+  },
+  {
+   "key": "guidance",
+   "zh": "你希望学校提供哪些 AI 使用指导？",
+   "en": "What AI guidance would you like your school to provide?",
+   "multi": true,
+   "ordered": false,
+   "options": [
+    {
+     "zh": "如何判断 AI 答案是否可靠",
+     "en": "How to judge whether AI answers are reliable",
+     "count": 24
+    },
+    {
+     "zh": "不同学科中的 AI 使用方法",
+     "en": "How to use AI in different subjects",
+     "count": 23
+    },
+    {
+     "zh": "如何向 AI 提问",
+     "en": "How to ask AI good questions",
+     "count": 23
+    },
+    {
+     "zh": "AI 写作和引用规范",
+     "en": "Rules for AI-assisted writing and citation",
+     "count": 17
+    },
+    {
+     "zh": "哪些行为属于学术不诚信",
+     "en": "What counts as academic dishonesty",
+     "count": 17
+    },
+    {
+     "zh": "如何保护隐私和数据安全",
+     "en": "How to protect privacy and data",
+     "count": 12
+    },
+    {
+     "zh": "不需要相关指导",
+     "en": "No guidance needed",
+     "count": 2
+    },
+    {
+     "zh": "其他",
+     "en": "Other",
+     "count": 1
+    }
+   ]
+  }
+ ]
+}

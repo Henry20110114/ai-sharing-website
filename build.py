@@ -10,7 +10,7 @@
 
 Pages mark their shared regions with comments:
 
-    <!-- head --> ... <!-- /head -->
+    <!-- head --> ... <!-- /head -->          (add `noindex` for an unlisted page: <!-- head noindex -->)
     <!-- header active="courses" --> ... <!-- /header -->
     <!-- footer --> ... <!-- /footer -->
 
@@ -87,7 +87,12 @@ def stamp(text, path, partials, version):
         .replace("{{description}}", html.escape(desc, quote=True))
         .replace("{{url}}", page_url(path))
     )
-    text = fill_region(text, "head", lambda attrs: head)
+    def head_region(attrs):
+        if "noindex" in attrs:
+            return '<meta name="robots" content="noindex, nofollow">\n' + head
+        return head
+
+    text = fill_region(text, "head", head_region)
 
     def header(attrs):
         active = first(r'active="([^"]*)"', attrs)
