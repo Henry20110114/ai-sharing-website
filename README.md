@@ -1,4 +1,4 @@
-# AI 学习与交流 — 网站源码
+# AI无界 · TeenLens AI — 网站源码
 
 纯静态网站（HTML + CSS + 少量 JS），托管在 GitHub Pages，域名 xiuyuanwang.org。
 只需要电脑上有 Python 3（Mac 自带），没有其他依赖。
@@ -24,15 +24,16 @@ assets/
   style.css             全站样式（配色集中在文件顶部的 :root 变量里）
   main.js               语言切换、移动端菜单
   article.js            文章页专用：自动目录、标题锚点、代码复制按钮
-  favicon.svg / favicon-32.png / apple-touch-icon.png   站点图标（Safari 和 iOS 用 PNG）
+  logo.png              透明背景的站标（页头、页脚）
+  favicon-32.png / apple-touch-icon.png   浏览器标签和 iOS 主屏幕图标
   og-image.png          链接分享到聊天软件时显示的预览图
-  src/                  上面几张图的 SVG 源文件
+  src/logo-source.jpg   站标原图；上面四张图都由 tools/make_icons.py 从它生成
   images/               文章里用到的图片放这里（需要时自己新建）
 .nojekyll               告诉 GitHub Pages 直接发布文件，不做任何处理
 CNAME                   自定义域名，不要删
 ```
 
-网站没有放任何联系方式。
+联系邮箱 teenlensai@163.com 出现在页脚、关于页和答疑页。
 
 ## 构建脚本 build.py
 
@@ -106,9 +107,10 @@ python3 build.py new courses llm-intro-1 大语言模型入门
 ## 修改样式
 
 - **改配色**：编辑 `assets/style.css` 顶部的 `:root` 变量。
-- **改站名**：搜索替换「AI 学习与交流」和 "AI Learning & Exchange"（partials 三个文件、各页面的 `<title>`、模板、`assets/src/og-image.svg`）。
-- **改图标 / 预览图**：改 `assets/src/` 里的 SVG，然后在仓库根目录运行 `swift assets/src/render-icons.swift`，
-  三张 PNG 会按正确尺寸重新生成到 `assets/`（Mac 自带 Swift，第一次运行会慢几秒）。
+- **改站名**：搜索替换「AI无界」和 "TeenLens AI"（partials 三个文件、各页面的 `<title>`、首页、模板、`build.py`）。
+- **换站标**：把新图放到 `assets/src/logo-source.jpg`（深色图案、浅色背景），然后运行 `python3 tools/make_icons.py`，
+  站标、favicon、iOS 图标和分享预览图会自动重新生成（只需要 Mac 自带的 Python 和 sips，约半分钟）。
+- **改联系邮箱**：搜索替换 `teenlensai@163.com`（页脚 partial、about.html、qa.html）。
 
 ## 本地预览与上线
 

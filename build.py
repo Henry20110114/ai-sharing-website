@@ -152,7 +152,7 @@ def new(section, slug, title=None):
     )
     if title:
         safe = html.escape(title, quote=True)
-        text = text.replace("<title>文章标题 · AI 学习与交流</title>", f"<title>{safe} · AI 学习与交流</title>")
+        text = text.replace("<title>文章标题 · AI无界</title>", f"<title>{safe} · AI无界</title>")
         text = text.replace('<span class="zh">文章标题</span>', f'<span class="zh">{safe}</span>')
 
     target.parent.mkdir(parents=True, exist_ok=True)

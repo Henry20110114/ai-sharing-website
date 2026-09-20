@@ -1,5 +1,5 @@
 /* ============================================
-   AI 学习与交流 — site styles
+   AI无界 · TeenLens AI — site styles
    One hue family (~155°): every neutral is a tint of the green. Sharp edges, no radius.
    ============================================ */
 
@@ -72,7 +72,8 @@ a:hover { color: var(--accent-deep); }
   display: flex; align-items: center; gap: 28px;
   padding-top: 14px; padding-bottom: 14px;
 }
-.brand { display: flex; align-items: center; color: var(--ink); }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); }
+.brand-logo { display: block; height: 30px; width: auto; }
 .brand:hover { color: var(--ink); }
 .brand-name { font-family: var(--serif); font-size: 18px; font-weight: 700; letter-spacing: 0.06em; }
 
@@ -104,6 +105,7 @@ a:hover { color: var(--accent-deep); }
   font-size: clamp(38px, 6vw, 60px);
   letter-spacing: 0.05em; color: var(--ink); font-weight: 600;
 }
+.hero-sub { margin: 6px 0 0; font-size: 15px; letter-spacing: 0.14em; color: var(--ink-soft); }
 .hero-lede { max-width: 34em; margin: 22px 0 34px; font-size: 17px; color: var(--ink-soft); }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
@@ -208,7 +210,11 @@ a:hover { color: var(--accent-deep); }
   display: flex; align-items: center; gap: 10px;
   font-family: var(--serif); font-weight: 700; letter-spacing: 0.08em; font-size: 18px;
 }
+.footer-brand .brand-logo { height: 24px; }
 .footer-tagline { margin: 10px 0 0; font-size: 13.5px; color: var(--ink-soft); }
+.footer-contact { font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
+.footer-contact strong { display: block; color: var(--ink); font-weight: 600; }
+.footer-contact a { display: block; }
 .footer-nav { display: flex; gap: 18px; flex-wrap: wrap; }
 .footer-nav a { font-size: 14px; color: var(--ink-soft); }
 .footer-nav a:hover { color: var(--accent); }
