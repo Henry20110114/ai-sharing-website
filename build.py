@@ -26,7 +26,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-SITE_URL = "https://xiuyuanwang.org"
+SITE_URL = "https://teenlensai.org"
 ASSET_FILES = ("style.css", "main.js", "article.js")
 SECTIONS = {
     "courses": {"zh": "课程分享", "en": "Courses", "back_en": "Back to courses", "page": "/courses.html"},

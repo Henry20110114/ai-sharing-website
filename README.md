@@ -1,6 +1,6 @@
 # AI无界 · TeenLens AI — 网站源码
 
-纯静态网站（HTML + CSS + 少量 JS），托管在 GitHub Pages，域名 xiuyuanwang.org。
+纯静态网站（HTML + CSS + 少量 JS），托管在 GitHub Pages，域名 teenlensai.org（旧域名 xiuyuanwang.org 已转向 xiuyuanwang.com）。
 只需要电脑上有 Python 3（Mac 自带），没有其他依赖。
 
 ## 文件结构
@@ -28,7 +28,8 @@ assets/
   favicon-32.png / apple-touch-icon.png   浏览器标签和 iOS 主屏幕图标
   og-image.png          链接分享到聊天软件时显示的预览图
   src/logo-source.jpg   站标原图；上面四张图都由 tools/make_icons.py 从它生成
-  images/               文章里用到的图片放这里（需要时自己新建）
+  images/               文章和团队介绍用到的图片放这里
+news/                   资讯长文，每篇一个页面（由 build.py new 生成）
 .nojekyll               告诉 GitHub Pages 直接发布文件，不做任何处理
 CNAME                   自定义域名，不要删
 ```
@@ -116,10 +117,11 @@ python3 build.py new courses llm-intro-1 大语言模型入门
 
 - 预览：在此文件夹运行 `python3 -m http.server 8000`，浏览器打开 `http://localhost:8000`。
   （页面用的是绝对路径，直接双击 HTML 文件打开会缺样式，要用上面的方式。）
-- 上线：`git add -A && git commit -m "说明" && git push`，大约一分钟后 xiuyuanwang.org 就会更新。
+- 上线：`git add -A && git commit -m "说明" && git push`，大约一分钟后 teenlensai.org 就会更新。
   提交时钩子会自动运行构建。
 
 ### 域名（已配置好，仅作记录）
 
-GoDaddy DNS：4 条 A 记录 `@` → `185.199.108.153` / `109.153` / `110.153` / `111.153`，
-1 条 CNAME `www` → `henry20110114.github.io`。仓库里的 `CNAME` 文件写着 `xiuyuanwang.org`。
+teenlensai.org 在 GoDaddy 的 DNS：4 条 A 记录 `@` → `185.199.108.153` / `109.153` / `110.153` / `111.153`，
+1 条 CNAME `www` → `henry20110114.github.io`。仓库里的 `CNAME` 文件写着 `teenlensai.org`。
+旧域名 xiuyuanwang.org 在 GoDaddy 设置了转发到 xiuyuanwang.com，与本站无关。
